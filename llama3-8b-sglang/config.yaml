@@ -4,7 +4,7 @@ model_metadata:
       - role: system
         content: "You are a helpful assistant."
       - role: user
-        content: "What is SGLang?"
+        content: "What is Llama?"
     stream: true
     model: "meta-llama/Llama-3.1-8B-Instruct"
     max_tokens: 32768
