@@ -1,0 +1,26 @@
+model_metadata:
+  example_model_input:
+    messages:
+      - role: system
+        content: "You are a helpful assistant."
+      - role: user
+        content: "What is SGLang?"
+    stream: true
+    model: "meta-llama/Llama-3.1-8B-Instruct"
+    max_tokens: 32768
+  tags:
+    - openai-compatible
+model_name: Llama 3 8B EAGLE SGLang
+base_image:
+  image: lmsysorg/sglang:v0.4.6.post5-cu124
+docker_server:
+  start_command: sh -c "HF_TOKEN=$(cat /secrets/hf_access_token) python3 -m sglang.launch_server --model-path meta-llama/Llama-3.1-8B-Instruct --host 0.0.0.0 --port 8000 --served-model-name meta-llama/Llama-3.1-8B-Instruct --tp 2 --speculative-algorithm EAGLE --speculative-draft-model-path lmsys/sglang-EAGLE3-LLaMA3.1-Instruct-8B --speculative-num-steps 3 --speculative-eagle-topk 1 --speculative-num-draft-tokens 4 --dtype float16"
+  readiness_endpoint: /health
+  liveness_endpoint: /health
+  predict_endpoint: /v1/chat/completions
+  server_port: 8000
+resources:
+  accelerator: L4:2
+  use_gpu: true
+runtime:
+  predict_concurrency: 32
