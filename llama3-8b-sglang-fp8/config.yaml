@@ -1,0 +1,26 @@
+model_metadata:
+  example_model_input:
+    messages:
+      - role: system
+        content: "You are a helpful assistant."
+      - role: user
+        content: "What is SGLang?"
+    stream: true
+    model: "nvidia/Llama-3.1-8B-Instruct-FP8"
+    max_tokens: 32768
+  tags:
+    - openai-compatible
+model_name: Llama 3 8B FP8 SGLang
+base_image:
+  image: lmsysorg/sglang:v0.4.6.post5-cu124
+docker_server:
+  start_command: sh -c "HF_TOKEN=$(cat /secrets/hf_access_token) python3 -m sglang.launch_server --model-path nvidia/Llama-3.1-8B-Instruct-FP8 --host 0.0.0.0 --port 8000 --served-model-name nvidia/Llama-3.1-8B-Instruct-FP8 --tp 1"
+  readiness_endpoint: /health
+  liveness_endpoint: /health
+  predict_endpoint: /v1/chat/completions
+  server_port: 8000
+resources:
+  accelerator: L4:1
+  use_gpu: true
+runtime:
+  predict_concurrency: 32
