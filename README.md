@@ -1,6 +1,6 @@
 # SGLang Workshop
 
-*AI Engineer World's Fair, June 3, 2025*
+*AI Engineer World's Fair, June 3, 2025* | *Yineng Zhang and Philip Kiely*
 
 Welcome to the SGLang workshop at AI Engineer World's Fair! 
 We are very excited to have you here and to spend some time this morning
@@ -52,3 +52,10 @@ Each folder has an example SGLang configuration along with instructions for depl
 
 Use `call.ipynb` to call individual deployments. Models deployed with SGLang are compatible
 with the OpenAI SDK -- just pass your model ID and API key.
+
+## Useful links
+
+* [SGLang GitHub](https://github.com/sgl-project/sglang)
+* [SGLang documentation](https://docs.sglang.ai/index.html)
+* [SGLang contribution guide](https://docs.sglang.ai/references/contribution_guide.html)
+* [SGLang code walkthrough](https://github.com/zhaochenyang20/Awesome-ML-SYS-Tutorial/tree/main/sglang/code-walk-through)
