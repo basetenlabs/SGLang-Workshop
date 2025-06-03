@@ -58,4 +58,5 @@ with the OpenAI SDK -- just pass your model ID and API key.
 * [SGLang GitHub](https://github.com/sgl-project/sglang)
 * [SGLang documentation](https://docs.sglang.ai/index.html)
 * [SGLang contribution guide](https://docs.sglang.ai/references/contribution_guide.html)
-* [SGLang code walkthrough](https://github.com/zhaochenyang20/Awesome-ML-SYS-Tutorial/tree/main/sglang/code-walk-through)
+* [SGLang code architecture](https://deepwiki.com/sgl-project/sglang) (foundation)
+* [SGLang code walkthrough](https://github.com/zhaochenyang20/Awesome-ML-SYS-Tutorial/tree/main/sglang/code-walk-through) (advanced)
